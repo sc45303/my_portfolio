@@ -1,22 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
-import Image from "next/image"
-import Lanyard from "@/components/ui/lanyard"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import Image from "next/image";
+import Lanyard from "@/components/ui/lanyard";
 
 interface PortfolioLandingProps {
-  onModeSelect: (mode: "simple" | "detailed") => void
+  onModeSelect: (mode: "simple" | "detailed") => void;
 }
 
-export default function PortfolioLanding({ onModeSelect }: PortfolioLandingProps) {
-  const [selectedMode, setSelectedMode] = useState<"simple" | "detailed">("simple")
+export default function PortfolioLanding({
+  onModeSelect,
+}: PortfolioLandingProps) {
+  const [selectedMode, setSelectedMode] = useState<"simple" | "detailed">(
+    "simple"
+  );
 
   const handleModeSelect = (mode: "simple" | "detailed") => {
-    setSelectedMode(mode)
-    setTimeout(() => onModeSelect(mode), 300)
-  }
+    setSelectedMode(mode);
+    setTimeout(() => onModeSelect(mode), 300);
+  };
 
   return (
     <div className="min-h-screen bg-[#000000] relative overflow-hidden">
@@ -38,23 +42,29 @@ export default function PortfolioLanding({ onModeSelect }: PortfolioLandingProps
           {/* Personal branding */}
           <div className="mb-8">
             <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gray-700">
-              <Image 
-                src="/image1.png" 
-                width={96} 
-                height={96} 
-                alt="Shaheer Naeem" 
-                className="w-full h-full object-cover" 
+              <Image
+                src="/image.jpg"
+                width={96}
+                height={96}
+                alt="suhail khan"
+                className="w-full h-full object-cover"
               />
             </div>
-            <h2 className="text-xl text-gray-300 font-light mb-2">Shaheer Naeem</h2>
-            <p className="text-gray-500 text-sm">Full Stack Developer & UI/UX Designer</p>
+            <h2 className="text-xl text-gray-300 font-light mb-2">
+              Suhail Khan
+            </h2>
+            <p className="text-gray-500 text-sm">
+              Full Stack Developer & UI/UX Designer
+            </p>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             How would you like to view my portfolio?
           </h1>
 
-          <p className="text-gray-400 text-lg md:text-xl mb-12 font-light">Choose a view mode to continue</p>
+          <p className="text-gray-400 text-lg md:text-xl mb-12 font-light">
+            Choose a view mode to continue
+          </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button
@@ -119,5 +129,5 @@ export default function PortfolioLanding({ onModeSelect }: PortfolioLandingProps
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 pointer-events-none z-10" />
     </div>
-  )
+  );
 }

@@ -1,39 +1,39 @@
-"use client"
-import { useState, useRef, useEffect } from "react"
-import type React from "react"
+"use client";
+import { useState, useRef, useEffect } from "react";
+import type React from "react";
 
-import { useChatAPI } from "@/hooks/useChatAPI"
-import Image from "next/image"
+import { useChatAPI } from "@/hooks/useChatAPI";
+import Image from "next/image";
 
 export default function ModernNeonChatbot() {
-  const { messages, isLoading, sendMessage } = useChatAPI()
-  const [isOpen, setIsOpen] = useState(false)
-  const [inputValue, setInputValue] = useState("")
-  const messagesEndRef = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
+  const { messages, isLoading, sendMessage } = useChatAPI();
+  const [isOpen, setIsOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const scrollToBottom = (): void => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
-    scrollToBottom()
-  }, [messages])
+    scrollToBottom();
+  }, [messages]);
 
   const handleSendMessage = async (): Promise<void> => {
-    if (!inputValue.trim()) return
+    if (!inputValue.trim()) return;
 
-    const message: string = inputValue
-    setInputValue("")
-    await sendMessage(message)
-  }
+    const message: string = inputValue;
+    setInputValue("");
+    await sendMessage(message);
+  };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault()
-      handleSendMessage()
+      e.preventDefault();
+      handleSendMessage();
     }
-  }
+  };
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -50,11 +50,26 @@ export default function ModernNeonChatbot() {
         }}
       >
         {isOpen ? (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg
+            className="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         ) : (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            className="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -70,14 +85,16 @@ export default function ModernNeonChatbot() {
         <div
           className="animate-slideUp bg-black rounded-2xl w-80 h-96 flex flex-col overflow-hidden border-2 border-cyan-400/30 backdrop-blur-sm"
           style={{
-            boxShadow: "0 0 40px rgba(34, 211, 238, 0.3), inset 0 0 40px rgba(34, 211, 238, 0.05)",
+            boxShadow:
+              "0 0 40px rgba(34, 211, 238, 0.3), inset 0 0 40px rgba(34, 211, 238, 0.05)",
           }}
         >
           {/* Header */}
           <div
             className="bg-gradient-to-r from-black via-gray-900 to-black text-white p-4 border-b border-cyan-400/20"
             style={{
-              background: "linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%)",
+              background:
+                "linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%)",
               boxShadow: "inset 0 1px 0 rgba(34, 211, 238, 0.2)",
             }}
           >
@@ -89,8 +106,8 @@ export default function ModernNeonChatbot() {
                 }}
               >
                 <Image
-                  src="/pfp.png"
-                  alt="Shaheer Naeem"
+                  src="/chatbot_profile.jpg"
+                  alt="Suhail Khan"
                   width={48}
                   height={48}
                   className="w-full h-full rounded-full object-cover bg-gray-800"
@@ -101,9 +118,11 @@ export default function ModernNeonChatbot() {
                   className="font-bold text-cyan-400 text-lg"
                   style={{ textShadow: "0 0 10px rgba(34, 211, 238, 0.8)" }}
                 >
-                  Shaheer Agent
+                  Suhail Agent
                 </h3>
-                <p className="text-xs text-gray-300">Ask me anything about Shaheer Naeem</p>
+                <p className="text-xs text-gray-300">
+                  Ask me anything about Suhail Agent
+                </p>
               </div>
             </div>
           </div>
@@ -113,23 +132,25 @@ export default function ModernNeonChatbot() {
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`animate-fadeIn flex ${message.type === "user" ? "justify-end" : "justify-start"}`}
+                className={`animate-fadeIn flex ${
+                  message.type === "user" ? "justify-end" : "justify-start"
+                }`}
               >
                 <div
                   className={`max-w-xs px-4 py-3 rounded-2xl ${
                     message.type === "user"
                       ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white border border-cyan-400/30"
                       : message.type === "error"
-                        ? "bg-gradient-to-r from-red-600 to-pink-600 text-white border border-red-400/30"
-                        : "bg-gray-800/80 text-gray-100 border border-gray-600/30 backdrop-blur-sm"
+                      ? "bg-gradient-to-r from-red-600 to-pink-600 text-white border border-red-400/30"
+                      : "bg-gray-800/80 text-gray-100 border border-gray-600/30 backdrop-blur-sm"
                   }`}
                   style={{
                     boxShadow:
                       message.type === "user"
                         ? "0 0 15px rgba(34, 211, 238, 0.3)"
                         : message.type === "error"
-                          ? "0 0 15px rgba(239, 68, 68, 0.3)"
-                          : "0 0 10px rgba(75, 85, 99, 0.3)",
+                        ? "0 0 15px rgba(239, 68, 68, 0.3)"
+                        : "0 0 10px rgba(75, 85, 99, 0.3)",
                   }}
                 >
                   <p className="text-sm leading-relaxed">{message.text}</p>
@@ -151,11 +172,17 @@ export default function ModernNeonChatbot() {
                       ></div>
                       <div
                         className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"
-                        style={{ animationDelay: "0.1s", boxShadow: "0 0 5px rgba(34, 211, 238, 0.8)" }}
+                        style={{
+                          animationDelay: "0.1s",
+                          boxShadow: "0 0 5px rgba(34, 211, 238, 0.8)",
+                        }}
                       ></div>
                       <div
                         className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"
-                        style={{ animationDelay: "0.2s", boxShadow: "0 0 5px rgba(34, 211, 238, 0.8)" }}
+                        style={{
+                          animationDelay: "0.2s",
+                          boxShadow: "0 0 5px rgba(34, 211, 238, 0.8)",
+                        }}
                       ></div>
                     </div>
                     <span className="text-sm text-cyan-300">Typing...</span>
@@ -190,7 +217,12 @@ export default function ModernNeonChatbot() {
                   boxShadow: "0 0 20px rgba(34, 211, 238, 0.4)",
                 }}
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -206,13 +238,16 @@ export default function ModernNeonChatbot() {
           <div className="px-4 py-3 bg-gradient-to-r from-black via-gray-900 to-black border-t border-cyan-400/10">
             <p className="text-xs text-center text-gray-400">
               Made by{" "}
-              <span className="font-bold text-cyan-400" style={{ textShadow: "0 0 8px rgba(34, 211, 238, 0.6)" }}>
-                Shaheer Naeem
+              <span
+                className="font-bold text-cyan-400"
+                style={{ textShadow: "0 0 8px rgba(34, 211, 238, 0.6)" }}
+              >
+                Suhail khan
               </span>
             </p>
           </div>
         </div>
       )}
     </div>
-  )
+  );
 }

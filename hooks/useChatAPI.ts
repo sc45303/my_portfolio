@@ -14,7 +14,7 @@ interface ChatResponse {
 
 export function useChatAPI() {
   const [messages, setMessages] = useState<Message[]>([
-    { text: "Hello! I'm Shaheer's agent. Ask me anything about Shaheer Naeem!", type: 'bot' }
+    { text: "Hello! I'm Suhail's agent. Ask me anything about Suhail Khan!", type: 'bot' }
   ]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -54,7 +54,7 @@ export function useChatAPI() {
 
   const clearMessages = useCallback(() => {
     setMessages([
-      { text: "Hello! I'm Shaheer's agent. Ask me anything about Shaheer Naeem!", type: 'bot' }
+      { text: "Hello! I'm Suhail's agent. Ask me anything about Suhail Khan!", type: 'bot' }
     ]);
   }, []);
 

@@ -1,22 +1,32 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github, Mail, Linkedin, Twitter, MapPin, Calendar, Phone, Send } from "lucide-react"
-import Link from "next/link"
-import AnimatedBackButton from "@/components/ui/AnimateBackButton"
-import Image from "next/image"
-import { useEffect } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ExternalLink,
+  Github,
+  Mail,
+  Linkedin,
+  Twitter,
+  MapPin,
+  Calendar,
+  Phone,
+  Send,
+} from "lucide-react";
+import Link from "next/link";
+import AnimatedBackButton from "@/components/ui/AnimateBackButton";
+import Image from "next/image";
+import { useEffect } from "react";
 
 interface DetailedPortfolioProps {
-  onBack: () => void
+  onBack: () => void;
 }
 
 export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
   // Scroll to top when component mounts
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [])
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -32,7 +42,7 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
             <div className="flex items-start space-x-6 mb-8 group">
               <div className="w-24 h-24 rounded-lg overflow-hidden border-2 border-gray-700 flex-shrink-0 transition-all duration-300 group-hover:border-green-500 group-hover:shadow-lg group-hover:shadow-green-500/20 group-hover:scale-105">
                 <Image
-                  src="/image1.png"
+                  src="/img1.png"
                   alt="Shaheer Naeem - Full Stack Developer"
                   width={200}
                   height={200}
@@ -41,7 +51,7 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
               </div>
               <div className="transition-all duration-300 group-hover:translate-x-2">
                 <h1 className="text-4xl font-bold mb-2 transition-all duration-300 group-hover:text-green-400">
-                  Shaheer Naeem
+                  Suhail Khan
                 </h1>
                 <p className="text-xl text-gray-400 mb-4 transition-all duration-300 group-hover:text-gray-300">
                   Full Stack Developer & UI/UX Designer
@@ -65,12 +75,18 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
               <CardContent className="p-4">
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center space-x-2 transition-all duration-300 hover:text-green-400 hover:translate-x-2">
-                    <Mail size={16} className="text-gray-400 transition-colors duration-300" />
-                    <span className="text-white">shaheernaeemwork@example.com</span>
+                    <Mail
+                      size={16}
+                      className="text-gray-400 transition-colors duration-300"
+                    />
+                    <span className="text-white">sc3078@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-2 transition-all duration-300 hover:text-green-400 hover:translate-x-2">
-                    <Phone size={16} className="text-gray-400 transition-colors duration-300" />
-                    <span className="text-white">+92 314 0211680</span>
+                    <Phone
+                      size={16}
+                      className="text-gray-400 transition-colors duration-300"
+                    />
+                    <span className="text-white">+92 3220472781</span>
                   </div>
                   <div className="flex space-x-2 pt-2">
                     <Link
@@ -111,9 +127,11 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
           </h2>
           <div className="bg-gray-900/30 p-6 rounded-lg border border-gray-800 transition-all duration-300 hover:border-green-500/50 hover:bg-gray-900/50 hover:shadow-lg hover:shadow-green-500/5">
             <p className="text-gray-300 leading-relaxed transition-all duration-300 hover:text-white">
-              I am a passionate full-stack developer with over 3 years of experience in building modern web
-              applications. I specialize in React, Next.js, Node.js, and have extensive experience with cloud
-              technologies. I enjoy creating clean, efficient code and exceptional user experiences.
+              I am a passionate full-stack developer with over 3 years of
+              experience in building modern web applications. I specialize in
+              React, Next.js, Node.js, and have extensive experience with cloud
+              technologies. I enjoy creating clean, efficient code and
+              exceptional user experiences.
             </p>
           </div>
         </section>
@@ -195,8 +213,9 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
                   </Badge>
                 </div>
                 <p className="text-gray-300 mb-3 transition-colors duration-300 group-hover:text-white">
-                  Lead development of scalable web applications serving 100k+ users. Mentored junior developers and
-                  implemented CI/CD pipelines.
+                  Lead development of scalable web applications serving 100k+
+                  users. Mentored junior developers and implemented CI/CD
+                  pipelines.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge
@@ -234,15 +253,17 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
                     <h3 className="text-xl font-semibold transition-colors duration-300 group-hover:text-blue-400">
                       Frontend Developer
                     </h3>
-                    <p className="text-blue-400 transition-colors duration-300 group-hover:text-blue-300">StartupXYZ</p>
+                    <p className="text-blue-400 transition-colors duration-300 group-hover:text-blue-300">
+                      StartupXYZ
+                    </p>
                     <p className="text-gray-500 text-sm transition-colors duration-300 group-hover:text-gray-400">
                       2021 - 2022 • San Francisco, CA
                     </p>
                   </div>
                 </div>
                 <p className="text-gray-300 mb-3 transition-colors duration-300 group-hover:text-white">
-                  Built responsive web applications using React and TypeScript. Collaborated with design team to
-                  implement pixel-perfect UIs.
+                  Built responsive web applications using React and TypeScript.
+                  Collaborated with design team to implement pixel-perfect UIs.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge
@@ -283,7 +304,8 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
                 2023 - Present
               </p>
               <p className="text-gray-300 text-sm transition-colors duration-300 group-hover:text-white">
-                Leading a team of 5 developers in building a modern e-commerce platform with advanced features.
+                Leading a team of 5 developers in building a modern e-commerce
+                platform with advanced features.
               </p>
             </div>
             <div className="border-l-2 border-gray-700 pl-4 transition-all duration-300 hover:border-blue-500 hover:translate-x-2 hover:shadow-lg hover:shadow-blue-500/5 group">
@@ -294,7 +316,8 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
                 2022 - 2023
               </p>
               <p className="text-gray-300 text-sm transition-colors duration-300 group-hover:text-white">
-                Developed and maintained a SaaS application serving over 10,000 active users.
+                Developed and maintained a SaaS application serving over 10,000
+                active users.
               </p>
             </div>
           </div>
@@ -309,13 +332,13 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
             <CardContent className="p-6">
               <div className="transition-all duration-300 group-hover:translate-x-2">
                 <h3 className="text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-purple-400">
-                  Bachelor of Computer Science
+                  Entermidiate
                 </h3>
                 <p className="text-blue-400 mb-1 transition-colors duration-300 group-hover:text-blue-300">
-                  University of Engineering & Technology
+                  Mehran degree college
                 </p>
                 <p className="text-gray-500 text-sm transition-colors duration-300 group-hover:text-gray-400">
-                  2018 - 2022 • Lahore, Pakistan
+                  2018 - 2022 • karachi, Pakistan
                 </p>
               </div>
             </CardContent>
@@ -336,7 +359,14 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS", "SASS"].map((skill) => (
+                  {[
+                    "React",
+                    "Next.js",
+                    "Vue.js",
+                    "TypeScript",
+                    "Tailwind CSS",
+                    "SASS",
+                  ].map((skill) => (
                     <Badge
                       key={skill}
                       variant="secondary"
@@ -357,7 +387,14 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {["Node.js", "Python", "Express", "FastAPI", "PostgreSQL", "MongoDB"].map((skill) => (
+                  {[
+                    "Node.js",
+                    "Python",
+                    "Express",
+                    "FastAPI",
+                    "PostgreSQL",
+                    "MongoDB",
+                  ].map((skill) => (
                     <Badge
                       key={skill}
                       variant="secondary"
@@ -378,15 +415,17 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {["AWS", "Docker", "Kubernetes", "CI/CD", "Git", "Linux"].map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="bg-gray-800 text-gray-300 text-xs transition-all duration-300 hover:bg-purple-900 hover:text-purple-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
+                  {["AWS", "Docker", "Kubernetes", "CI/CD", "Git", "Linux"].map(
+                    (skill) => (
+                      <Badge
+                        key={skill}
+                        variant="secondary"
+                        className="bg-gray-800 text-gray-300 text-xs transition-all duration-300 hover:bg-purple-900 hover:text-purple-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"
+                      >
+                        {skill}
+                      </Badge>
+                    )
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -402,15 +441,17 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
             {[
               {
                 title: "E-Commerce Platform",
-                description: "Modern e-commerce solution with payment processing",
+                description:
+                  "Modern e-commerce solution with payment processing",
                 tech: ["Next.js", "Stripe", "PostgreSQL"],
                 github: "#",
-                demo: "#",
+                demo: "/",
                 color: "green",
               },
               {
                 title: "Task Management App",
-                description: "Collaborative task management with real-time updates",
+                description:
+                  "Collaborative task management with real-time updates",
                 tech: ["React", "Node.js", "Socket.io"],
                 github: "#",
                 demo: "#",
@@ -496,5 +537,5 @@ export default function DetailedPortfolio({ onBack }: DetailedPortfolioProps) {
         </section>
       </div>
     </div>
-  )
+  );
 }

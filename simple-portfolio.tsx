@@ -1,24 +1,34 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { useEffect } from "react"
+import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
-import { Mail, Github, Linkedin, Twitter, MapPin, Send, MessageCircle, Youtube, Facebook } from "lucide-react"
+import {
+  Mail,
+  Github,
+  Linkedin,
+  Twitter,
+  MapPin,
+  Send,
+  MessageCircle,
+  Youtube,
+  Facebook,
+} from "lucide-react";
 
-import ProfileCard from "@/components/ProfileCard/ProfileCard" // or wherever your ProfileCard is located
-import { useRouter } from "next/navigation" // ✅ Correct for App Router
+import ProfileCard from "@/components/ProfileCard/ProfileCard"; // or wherever your ProfileCard is located
+import { useRouter } from "next/navigation"; // ✅ Correct for App Router
 
 interface SimplePortfolioProps {
-  onBack: () => void
+  onBack: () => void;
 }
 
 export default function SimplePortfolio({ onBack }: SimplePortfolioProps) {
-  const router = useRouter() // ✅ Define router using useRouter hook
+  const router = useRouter(); // ✅ Define router using useRouter hook
 
   // Scroll to top when component mounts
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [])
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
@@ -47,14 +57,26 @@ export default function SimplePortfolio({ onBack }: SimplePortfolioProps) {
           <div className="flex absolute top-0 left-0 transition-transform duration-400 ease-out group-hover:-translate-x-12 sm:group-hover:-translate-x-16 group-focus:-translate-x-12 sm:group-focus:-translate-x-16">
             {/* First arrow icon */}
             <span className="block w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 mt-3.5 ml-3.5 sm:mt-5 sm:ml-5 md:mt-6 md:ml-6 lg:mt-8 lg:ml-8 rotate-0">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path fill="white" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full h-full"
+              >
+                <path
+                  fill="white"
+                  d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                />
               </svg>
             </span>
 
             {/* Second arrow icon */}
             <span className="block w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 mt-3.5 ml-2.5 sm:mt-5 sm:ml-4 md:mt-6 md:ml-5 lg:mt-8 lg:ml-6 rotate-0">
-              <svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+              <svg
+                fill="white"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full h-full"
+              >
                 <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
               </svg>
             </span>
@@ -69,14 +91,16 @@ export default function SimplePortfolio({ onBack }: SimplePortfolioProps) {
             {/* Left side - Text content */}
             <div className="text-left order-2 lg:order-1">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                Shaheer Naeem
+                Suhail Ali
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 sm:mb-8 font-light">
                 I build & develop modern web applications
               </p>
               <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl">
-                I build full-stack web applications and teach others to do the same. Currently working with React,
-                Next.js, and Node.js while managing multiple projects and contributing to the developer community.
+                I build full-stack web applications and teach others to do the
+                same. Currently working with React, Next.js, and Node.js while
+                managing multiple projects and contributing to the developer
+                community.
               </p>
 
               <div className="flex items-center text-gray-500 mb-8 sm:mb-12 text-sm sm:text-base">
@@ -87,7 +111,7 @@ export default function SimplePortfolio({ onBack }: SimplePortfolioProps) {
               {/* Social links */}
               <div className="flex flex-wrap gap-4 sm:gap-6 mb-12 sm:mb-16">
                 <a
-                  href="mailto:shaheer@example.com"
+                  href="mailto:sc3078745@gmail.com"
                   className="text-gray-400 hover:text-white transition-colors duration-300 p-2"
                   aria-label="Email"
                 >
@@ -163,16 +187,16 @@ export default function SimplePortfolio({ onBack }: SimplePortfolioProps) {
             <div className="flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0">
               <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg">
                 <ProfileCard
-                  name="Shaheer Naeem"
+                  name="Suhail Ali"
                   title="Software Engineer"
-                  handle="shaheernaeem"
+                  handle="suhailali"
                   status="Online"
                   contactText="Contact Me"
-                  avatarUrl="/image1.png"
+                  avatarUrl="/img1.png"
                   showUserInfo={true}
                   enableTilt={true}
                   onContactClick={() => {
-                    router.push("/contact") // ✅ Navigate to contact page
+                    router.push("/contact"); // ✅ Navigate to contact page
                   }}
                 />
               </div>
@@ -181,5 +205,5 @@ export default function SimplePortfolio({ onBack }: SimplePortfolioProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
